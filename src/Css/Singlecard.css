@@ -1,0 +1,36 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+.container{
+    position: relative;
+    padding: 3% 3%;
+    display: block;
+}
+.movie-wrapper{
+    display: flex;
+    overflow-x: scroll;
+    
+}
+.card{
+    margin-right: 20px;
+    max-width: 380px;
+    position: relative;
+    cursor: pointer;
+}
+.heart{
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.heart i{
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+.name{
+    text-align: center;
+    color: white;
+}
