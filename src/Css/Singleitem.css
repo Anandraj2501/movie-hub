@@ -99,6 +99,28 @@
     margin-top: 2%;
 }
 
+.moresuggestion-container{
+    margin-top: 4%;
+    padding: 4%;
+    /* border: 2px solid green; */
+}
+.more-movies{
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.more-items{
+    max-width: 100%;
+    /* height: 146px;
+    position: relative; */
+    /* border: 2px solid blue; */
+    margin: 5px;
+}
+.more-items > img{
+    width: 100%;
+    height: 100%;
+}
+
 
 @media screen and (max-width:750px) {
     .movie-name {
@@ -117,7 +139,7 @@
 
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:760px) {
     .info {
         display: none;
     }

@@ -4,6 +4,6 @@ import singleitemslice from "./Allslice/singleitemslice";
 export const store = configureStore({
     reducer:{
         Movie: movieslice,
-        Item: singleitemslice
+        Item: singleitemslice,
     }
 })

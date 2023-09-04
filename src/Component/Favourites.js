@@ -6,10 +6,6 @@ import {
 
 } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-
-import { fetchsingleitem} from '../Allslice/singleitemslice';
-
-import {fetchcredits,fetchtrailer} from "../Allslice/singleitemslice";
 export default function Favourites() {
     const handleclick = (item) => {
 
@@ -20,11 +16,7 @@ export default function Favourites() {
     if (cart.length > 0) {
         console.log(cart[0].item.title, "cart hun");
     }
-    const dispatchitems = (item)=>{
-        dispatch(fetchsingleitem({item}));
-        dispatch(fetchcredits({item}));
-        dispatch(fetchtrailer({item}));
-    }
+   
     return (
         <div className='fvrt-container'>
             <span style={{ color: "white", fontSize: "24px" }}>Favourites</span>
@@ -34,11 +26,11 @@ export default function Favourites() {
                         <div className='fvrts-card' key={index}>
                             <div className='card-info'>
                                 <div className='fvrts-heart' ><i class="ri-heart-fill" onClick={() => handleclick(item.item)}></i></div>
-                                <Link to="/singleitem" onClick={() => dispatchitems(item.item)}>
+                                <Link to={`/singleitem/${item.item.id}`}>
 
-                                    <img src={`https://image.tmdb.org/t/p/w200${item.item.poster_path}`} alt='#'></img>
+                                    <img src={`https://image.tmdb.org/t/p/w200${item.item.poster_path}`} alt='#'></img></Link>
                                     <div className='fvrts-name'>{item.item.title}</div>
-                                </Link>
+                                
                             </div>
                         </div>
                     ))) : (<div style={{ color: "white" }}>Add your favourite movie,webseries....</div>)

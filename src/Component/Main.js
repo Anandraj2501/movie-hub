@@ -1,20 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import "../Css/Main.css";
 import Singlecard from './Singlecard';
-import {useDispatch} from "react-redux";
-import { fetchmovies } from '../Allslice/movieslice';
+import api from "../apis/api";
 export default function Main() {
 
-    const dispatch = useDispatch();
-     useEffect(()=>{
-        dispatch(fetchmovies())
-     },[dispatch])
 
     return (
         <div className='main'>
-            <Singlecard/>
-            <Singlecard/>
-            
+            <Singlecard title={"Movie"} fetchurl={api.movie}/>
+            <Singlecard title={"Top rated Movie"} fetchurl={api.toprated}/>
+            <Singlecard title={"Movies Now Playing"} fetchurl={api.nowplaying}/>
         </div>
     )
 }

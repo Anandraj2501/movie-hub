@@ -9,6 +9,7 @@ import {
 
 } from "react-router-dom";
 import Favourites from "./Component/Favourites";
+import Searchpage from "./Component/Searchpage";
 function App() {
 
   return (
@@ -18,7 +19,8 @@ function App() {
         <Routes>
           <Route path='/' exact element={<Main />}></Route>
           <Route path='/favourites' exact element={<Favourites />}></Route>
-          <Route path='/singleitem' exact element={<Singleitem />}></Route>
+          <Route path='/singleitem/:id' exact element={<Singleitem />}></Route>
+          <Route path='/search' exact element={<Searchpage />}></Route>
         </Routes>
       </Router>
     </div>
