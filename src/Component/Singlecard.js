@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "../Css/Singlecard.css"
 import 'remixicon/fonts/remixicon.css'
 import { useDispatch, useSelector } from 'react-redux';
-import { add_to_favourites, remove_from_favourites, add_movies } from '../Allslice/movieslice';
+import { add_to_favourites, remove_from_favourites, add_movies, add_to_recommendation } from '../Allslice/movieslice';
 import {
     Link
 
@@ -17,6 +17,7 @@ export default function Singlecard({ title, fetchurl }) {
    
 
     const [movies, setMovie] = useState([]);
+    
     useEffect(() => {
         async function fetchdata() {
             let response = await fetch(`https://api.themoviedb.org/3/${fetchurl}`)
@@ -28,6 +29,11 @@ export default function Singlecard({ title, fetchurl }) {
         }
         fetchdata();
     }, [fetchurl,dispatch])
+
+    const handlefavrtclick = (item)=>{
+        dispatch(add_to_favourites({item}));
+        dispatch(add_to_recommendation(item));
+    }
 
     return (
         <div className='container'>
@@ -41,7 +47,7 @@ export default function Singlecard({ title, fetchurl }) {
                         <div className='card' key={index}>
                             {(cart.some((e) => e.item.id === item.id)) ?
                                 (<div className='heart' ><i className="ri-heart-fill" onClick={()=>dispatch(remove_from_favourites({item}))}></i></div>) :
-                                (<div className='heart' ><i className="ri-heart-line" onClick={()=>dispatch(add_to_favourites({item}))}></i></div>)
+                                (<div className='heart' ><i className="ri-heart-line" onClick={()=>handlefavrtclick(item)}></i></div>)
 
                             }
                             <Link to={`/singleitem/${item.id}`}>

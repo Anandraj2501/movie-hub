@@ -33,6 +33,7 @@ export default function Searchpage() {
 
         searchdata(name);
     }, [name, searchurl])
+    
     console.log(searchitems);
     let cart = useSelector((state) => state.Movie.favourites);
 

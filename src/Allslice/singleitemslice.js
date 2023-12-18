@@ -70,3 +70,6 @@ export const singleItemSlice = createSlice({
 
 export const {add_singleitem} = singleItemSlice.actions;
 export default singleItemSlice.reducer;
+
+
+

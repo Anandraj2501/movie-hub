@@ -71,6 +71,10 @@
     max-width: 70%;
     word-wrap: break-word;
 }
+.watch-providers>span{
+    font-size: 16px;
+    color: #a3a3a3
+}
 
 .info-phone {
     display: none;
@@ -119,6 +123,52 @@
 .more-items > img{
     width: 100%;
     height: 100%;
+}
+
+.review-container{
+    /* border: 2px solid green; */
+    padding: 4%;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.review-box{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding: 3% ;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.rating-count{
+    background-color: white;
+    border-radius: 10px;
+    color: black;
+    padding: 5px;
+}
+.user-container{
+    /* border: 2px solid green; */
+}
+
+.user-info{
+    line-height: 1em;
+}
+
+.review-info{
+    display: flex;
+}
+
+.review-info>span{
+    margin-right: 4px;
+}
+
+.review{
+    word-wrap: break-word;
+    margin-top: 14px;
+}
+.review>p{
+    color: #a3a3a3;
 }
 
 
